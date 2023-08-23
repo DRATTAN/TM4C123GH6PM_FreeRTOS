@@ -10,6 +10,7 @@ GEN_OPTS__FLAG :=
 GEN_CMDS__FLAG := 
 
 ORDERED_OBJS += \
+"./freertos.obj" \
 "./main.obj" \
 "./startup_ccs.obj" \
 "./Peripheral_library/CX20106A/cx20106a.obj" \
@@ -20,6 +21,16 @@ ORDERED_OBJS += \
 "./Peripheral_library/OLED/oled.obj" \
 "./Peripheral_library/TSL1401/tsl1401.obj" \
 "./Peripheral_library/VL53L0x/vl53l0x.obj" \
+"./RTOS/FreeRTOS-Kernel/croutine.obj" \
+"./RTOS/FreeRTOS-Kernel/event_groups.obj" \
+"./RTOS/FreeRTOS-Kernel/list.obj" \
+"./RTOS/FreeRTOS-Kernel/queue.obj" \
+"./RTOS/FreeRTOS-Kernel/stream_buffer.obj" \
+"./RTOS/FreeRTOS-Kernel/tasks.obj" \
+"./RTOS/FreeRTOS-Kernel/timers.obj" \
+"./RTOS/FreeRTOS-Kernel/portable/CCS/ARM_CM4F/port.obj" \
+"./RTOS/FreeRTOS-Kernel/portable/CCS/ARM_CM4F/portasm.obj" \
+"./RTOS/FreeRTOS-Kernel/portable/MemMang/heap_4.obj" \
 "./Structures_library/linkedlist.obj" \
 "./TM4C123GH6PM_library/adc/lib_adc.obj" \
 "./TM4C123GH6PM_library/clock/lib_clock.obj" \
@@ -91,6 +102,9 @@ RMDIR := RMDIR /S/Q
 -include Peripheral_library/OLED/subdir_vars.mk
 -include Peripheral_library/TSL1401/subdir_vars.mk
 -include Peripheral_library/VL53L0x/subdir_vars.mk
+-include RTOS/FreeRTOS-Kernel/subdir_vars.mk
+-include RTOS/FreeRTOS-Kernel/portable/CCS/ARM_CM4F/subdir_vars.mk
+-include RTOS/FreeRTOS-Kernel/portable/MemMang/subdir_vars.mk
 -include Structures_library/subdir_vars.mk
 -include TM4C123GH6PM_library/adc/subdir_vars.mk
 -include TM4C123GH6PM_library/clock/subdir_vars.mk
@@ -112,6 +126,9 @@ RMDIR := RMDIR /S/Q
 -include Peripheral_library/OLED/subdir_rules.mk
 -include Peripheral_library/TSL1401/subdir_rules.mk
 -include Peripheral_library/VL53L0x/subdir_rules.mk
+-include RTOS/FreeRTOS-Kernel/subdir_rules.mk
+-include RTOS/FreeRTOS-Kernel/portable/CCS/ARM_CM4F/subdir_rules.mk
+-include RTOS/FreeRTOS-Kernel/portable/MemMang/subdir_rules.mk
 -include Structures_library/subdir_rules.mk
 -include TM4C123GH6PM_library/adc/subdir_rules.mk
 -include TM4C123GH6PM_library/clock/subdir_rules.mk
@@ -243,11 +260,13 @@ TM4C123GH6PM_FreeRTOS.out: $(OBJS) $(CMD_SRCS) $(LIB_SRCS) $(GEN_CMDS)
 # Other Targets
 clean:
 	-$(RM) $(EXE_OUTPUTS__QUOTED)
-	-$(RM) "main.obj" "startup_ccs.obj" "Peripheral_library\CX20106A\cx20106a.obj" "Peripheral_library\GANWEI-8Bit-photocell\photocell.obj" "Peripheral_library\GY62\gy62.obj" "Peripheral_library\HC-SR04\hc-sr04.obj" "Peripheral_library\OLED\front.obj" "Peripheral_library\OLED\oled.obj" "Peripheral_library\TSL1401\tsl1401.obj" "Peripheral_library\VL53L0x\vl53l0x.obj" "Structures_library\linkedlist.obj" "TM4C123GH6PM_library\adc\lib_adc.obj" "TM4C123GH6PM_library\clock\lib_clock.obj" "TM4C123GH6PM_library\gpio\lib_gpio.obj" "TM4C123GH6PM_library\i2c\lib_i2c.obj" "TM4C123GH6PM_library\isr_anagement\lib_ADCisrmanagement.obj" "TM4C123GH6PM_library\isr_anagement\lib_EXTIisrmanagement.obj" "TM4C123GH6PM_library\isr_anagement\lib_QEIisrmanagement.obj" "TM4C123GH6PM_library\isr_anagement\lib_TIMERisrmanagement.obj" "TM4C123GH6PM_library\isr_anagement\lib_UARTisrmanagement.obj" "TM4C123GH6PM_library\pwm\lib_pwm.obj" "TM4C123GH6PM_library\qei\lib_qei.obj" "TM4C123GH6PM_library\time\lib_time.obj" "TM4C123GH6PM_library\timer\lib_timer.obj" 
-	-$(RM) "TM4C123GH6PM_library\uart\lib_uart.obj" "driverlib\adc.obj" "driverlib\aes.obj" "driverlib\can.obj" "driverlib\comp.obj" "driverlib\cpu.obj" "driverlib\crc.obj" "driverlib\des.obj" "driverlib\eeprom.obj" "driverlib\emac.obj" "driverlib\epi.obj" "driverlib\epi_workaround_ccs.obj" "driverlib\flash.obj" "driverlib\fpu.obj" "driverlib\gpio.obj" "driverlib\hibernate.obj" "driverlib\i2c.obj" "driverlib\interrupt.obj" "driverlib\lcd.obj" "driverlib\mpu.obj" "driverlib\onewire.obj" "driverlib\pwm.obj" "driverlib\qei.obj" "driverlib\shamd5.obj" "driverlib\ssi.obj" "driverlib\sw_crc.obj" "driverlib\sysctl.obj" "driverlib\sysexc.obj" "driverlib\systick.obj" "driverlib\timer.obj" "driverlib\uart.obj" "driverlib\udma.obj" "driverlib\usb.obj" "driverlib\watchdog.obj" "utils\uartstdio.obj" "utils\ustdlib.obj" 
-	-$(RM) "main.d" "startup_ccs.d" "Peripheral_library\CX20106A\cx20106a.d" "Peripheral_library\GANWEI-8Bit-photocell\photocell.d" "Peripheral_library\GY62\gy62.d" "Peripheral_library\HC-SR04\hc-sr04.d" "Peripheral_library\OLED\front.d" "Peripheral_library\OLED\oled.d" "Peripheral_library\TSL1401\tsl1401.d" "Peripheral_library\VL53L0x\vl53l0x.d" "Structures_library\linkedlist.d" "TM4C123GH6PM_library\adc\lib_adc.d" "TM4C123GH6PM_library\clock\lib_clock.d" "TM4C123GH6PM_library\gpio\lib_gpio.d" "TM4C123GH6PM_library\i2c\lib_i2c.d" "TM4C123GH6PM_library\isr_anagement\lib_ADCisrmanagement.d" "TM4C123GH6PM_library\isr_anagement\lib_EXTIisrmanagement.d" "TM4C123GH6PM_library\isr_anagement\lib_QEIisrmanagement.d" "TM4C123GH6PM_library\isr_anagement\lib_TIMERisrmanagement.d" "TM4C123GH6PM_library\isr_anagement\lib_UARTisrmanagement.d" "TM4C123GH6PM_library\pwm\lib_pwm.d" "TM4C123GH6PM_library\qei\lib_qei.d" "TM4C123GH6PM_library\time\lib_time.d" "TM4C123GH6PM_library\timer\lib_timer.d" "TM4C123GH6PM_library\uart\lib_uart.d" 
-	-$(RM) "driverlib\adc.d" "driverlib\aes.d" "driverlib\can.d" "driverlib\comp.d" "driverlib\cpu.d" "driverlib\crc.d" "driverlib\des.d" "driverlib\eeprom.d" "driverlib\emac.d" "driverlib\epi.d" "driverlib\flash.d" "driverlib\fpu.d" "driverlib\gpio.d" "driverlib\hibernate.d" "driverlib\i2c.d" "driverlib\interrupt.d" "driverlib\lcd.d" "driverlib\mpu.d" "driverlib\onewire.d" "driverlib\pwm.d" "driverlib\qei.d" "driverlib\shamd5.d" "driverlib\ssi.d" "driverlib\sw_crc.d" "driverlib\sysctl.d" "driverlib\sysexc.d" "driverlib\systick.d" "driverlib\timer.d" "driverlib\uart.d" "driverlib\udma.d" "driverlib\usb.d" "driverlib\watchdog.d" "utils\uartstdio.d" "utils\ustdlib.d" 
+	-$(RM) "freertos.obj" "main.obj" "startup_ccs.obj" "Peripheral_library\CX20106A\cx20106a.obj" "Peripheral_library\GANWEI-8Bit-photocell\photocell.obj" "Peripheral_library\GY62\gy62.obj" "Peripheral_library\HC-SR04\hc-sr04.obj" "Peripheral_library\OLED\front.obj" "Peripheral_library\OLED\oled.obj" "Peripheral_library\TSL1401\tsl1401.obj" "Peripheral_library\VL53L0x\vl53l0x.obj" "RTOS\FreeRTOS-Kernel\croutine.obj" "RTOS\FreeRTOS-Kernel\event_groups.obj" "RTOS\FreeRTOS-Kernel\list.obj" "RTOS\FreeRTOS-Kernel\queue.obj" "RTOS\FreeRTOS-Kernel\stream_buffer.obj" "RTOS\FreeRTOS-Kernel\tasks.obj" "RTOS\FreeRTOS-Kernel\timers.obj" "RTOS\FreeRTOS-Kernel\portable\CCS\ARM_CM4F\port.obj" "RTOS\FreeRTOS-Kernel\portable\CCS\ARM_CM4F\portasm.obj" "RTOS\FreeRTOS-Kernel\portable\MemMang\heap_4.obj" "Structures_library\linkedlist.obj" "TM4C123GH6PM_library\adc\lib_adc.obj" "TM4C123GH6PM_library\clock\lib_clock.obj" "TM4C123GH6PM_library\gpio\lib_gpio.obj" "TM4C123GH6PM_library\i2c\lib_i2c.obj" "TM4C123GH6PM_library\isr_anagement\lib_ADCisrmanagement.obj" 
+	-$(RM) "TM4C123GH6PM_library\isr_anagement\lib_EXTIisrmanagement.obj" "TM4C123GH6PM_library\isr_anagement\lib_QEIisrmanagement.obj" "TM4C123GH6PM_library\isr_anagement\lib_TIMERisrmanagement.obj" "TM4C123GH6PM_library\isr_anagement\lib_UARTisrmanagement.obj" "TM4C123GH6PM_library\pwm\lib_pwm.obj" "TM4C123GH6PM_library\qei\lib_qei.obj" "TM4C123GH6PM_library\time\lib_time.obj" "TM4C123GH6PM_library\timer\lib_timer.obj" "TM4C123GH6PM_library\uart\lib_uart.obj" "driverlib\adc.obj" "driverlib\aes.obj" "driverlib\can.obj" "driverlib\comp.obj" "driverlib\cpu.obj" "driverlib\crc.obj" "driverlib\des.obj" "driverlib\eeprom.obj" "driverlib\emac.obj" "driverlib\epi.obj" "driverlib\epi_workaround_ccs.obj" "driverlib\flash.obj" "driverlib\fpu.obj" "driverlib\gpio.obj" "driverlib\hibernate.obj" "driverlib\i2c.obj" "driverlib\interrupt.obj" "driverlib\lcd.obj" "driverlib\mpu.obj" "driverlib\onewire.obj" "driverlib\pwm.obj" "driverlib\qei.obj" "driverlib\shamd5.obj" "driverlib\ssi.obj" "driverlib\sw_crc.obj" "driverlib\sysctl.obj" 
+	-$(RM) "driverlib\sysexc.obj" "driverlib\systick.obj" "driverlib\timer.obj" "driverlib\uart.obj" "driverlib\udma.obj" "driverlib\usb.obj" "driverlib\watchdog.obj" "utils\uartstdio.obj" "utils\ustdlib.obj" 
+	-$(RM) "freertos.d" "main.d" "startup_ccs.d" "Peripheral_library\CX20106A\cx20106a.d" "Peripheral_library\GANWEI-8Bit-photocell\photocell.d" "Peripheral_library\GY62\gy62.d" "Peripheral_library\HC-SR04\hc-sr04.d" "Peripheral_library\OLED\front.d" "Peripheral_library\OLED\oled.d" "Peripheral_library\TSL1401\tsl1401.d" "Peripheral_library\VL53L0x\vl53l0x.d" "RTOS\FreeRTOS-Kernel\croutine.d" "RTOS\FreeRTOS-Kernel\event_groups.d" "RTOS\FreeRTOS-Kernel\list.d" "RTOS\FreeRTOS-Kernel\queue.d" "RTOS\FreeRTOS-Kernel\stream_buffer.d" "RTOS\FreeRTOS-Kernel\tasks.d" "RTOS\FreeRTOS-Kernel\timers.d" "RTOS\FreeRTOS-Kernel\portable\CCS\ARM_CM4F\port.d" "RTOS\FreeRTOS-Kernel\portable\MemMang\heap_4.d" "Structures_library\linkedlist.d" "TM4C123GH6PM_library\adc\lib_adc.d" "TM4C123GH6PM_library\clock\lib_clock.d" "TM4C123GH6PM_library\gpio\lib_gpio.d" "TM4C123GH6PM_library\i2c\lib_i2c.d" "TM4C123GH6PM_library\isr_anagement\lib_ADCisrmanagement.d" "TM4C123GH6PM_library\isr_anagement\lib_EXTIisrmanagement.d" "TM4C123GH6PM_library\isr_anagement\lib_QEIisrmanagement.d" 
+	-$(RM) "TM4C123GH6PM_library\isr_anagement\lib_TIMERisrmanagement.d" "TM4C123GH6PM_library\isr_anagement\lib_UARTisrmanagement.d" "TM4C123GH6PM_library\pwm\lib_pwm.d" "TM4C123GH6PM_library\qei\lib_qei.d" "TM4C123GH6PM_library\time\lib_time.d" "TM4C123GH6PM_library\timer\lib_timer.d" "TM4C123GH6PM_library\uart\lib_uart.d" "driverlib\adc.d" "driverlib\aes.d" "driverlib\can.d" "driverlib\comp.d" "driverlib\cpu.d" "driverlib\crc.d" "driverlib\des.d" "driverlib\eeprom.d" "driverlib\emac.d" "driverlib\epi.d" "driverlib\flash.d" "driverlib\fpu.d" "driverlib\gpio.d" "driverlib\hibernate.d" "driverlib\i2c.d" "driverlib\interrupt.d" "driverlib\lcd.d" "driverlib\mpu.d" "driverlib\onewire.d" "driverlib\pwm.d" "driverlib\qei.d" "driverlib\shamd5.d" "driverlib\ssi.d" "driverlib\sw_crc.d" "driverlib\sysctl.d" "driverlib\sysexc.d" "driverlib\systick.d" "driverlib\timer.d" "driverlib\uart.d" "driverlib\udma.d" "driverlib\usb.d" "driverlib\watchdog.d" "utils\uartstdio.d" "utils\ustdlib.d" 
 	-$(RM) "driverlib\epi_workaround_ccs.d" 
+	-$(RM) "RTOS\FreeRTOS-Kernel\portable\CCS\ARM_CM4F\portasm.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

@@ -119,6 +119,9 @@ Peripheral_library/HC-SR04 \
 Peripheral_library/OLED \
 Peripheral_library/TSL1401 \
 Peripheral_library/VL53L0x \
+RTOS/FreeRTOS-Kernel \
+RTOS/FreeRTOS-Kernel/portable/CCS/ARM_CM4F \
+RTOS/FreeRTOS-Kernel/portable/MemMang \
 Structures_library \
 TM4C123GH6PM_library/adc \
 TM4C123GH6PM_library/clock \

@@ -1,6 +1,7 @@
 # FIXED
 
 main.obj: ../main.c
+main.obj: ../main.h
 main.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/TM4C123GH6PM_FreeRTOS/TM4C123GH6PM_library/LIB_INCLUDE.h
 main.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/TM4C123GH6PM_FreeRTOS/TM4C123GH6PM_library/adc/lib_adc.h
 main.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_18.12.8.LTS/include/stdint.h
@@ -78,8 +79,23 @@ main.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_18.12.8.LTS/include/xlocal
 main.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/TM4C123GH6PM_FreeRTOS/Structures_library/STRUCT_INCLUDE.h
 main.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/TM4C123GH6PM_FreeRTOS/Structures_library/linkedlist.h
 main.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_18.12.8.LTS/include/stdlib.h
+main.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/TM4C123GH6PM_FreeRTOS/RTOS/FreeRTOS_INCLUDE.h
+main.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/TM4C123GH6PM_FreeRTOS/RTOS/FreeRTOS-Kernel/include/FreeRTOS.h
+main.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_18.12.8.LTS/include/stddef.h
+main.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/TM4C123GH6PM_FreeRTOS/RTOS/FreeRTOS-Kernel/include/FreeRTOSConfig.h
+main.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/TM4C123GH6PM_FreeRTOS/RTOS/FreeRTOS-Kernel/include/projdefs.h
+main.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/TM4C123GH6PM_FreeRTOS/RTOS/FreeRTOS-Kernel/include/portable.h
+main.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/TM4C123GH6PM_FreeRTOS/RTOS/FreeRTOS-Kernel/include/deprecated_definitions.h
+main.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/TM4C123GH6PM_FreeRTOS/RTOS/FreeRTOS-Kernel/portable/CCS/ARM_CM4F/portmacro.h
+main.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/TM4C123GH6PM_FreeRTOS/RTOS/FreeRTOS-Kernel/include/mpu_wrappers.h
+main.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/TM4C123GH6PM_FreeRTOS/RTOS/FreeRTOS-Kernel/include/task.h
+main.obj: C:/Users/RATTAN/Desktop/ccs\ workspace/TM4C123GH6PM_FreeRTOS/RTOS/FreeRTOS-Kernel/include/list.h
+main.obj: ../freertos.h
+main.obj: ../main.h
 
 ../main.c:
+
+../main.h:
 
 C:/Users/RATTAN/Desktop/ccs\ workspace/TM4C123GH6PM_FreeRTOS/TM4C123GH6PM_library/LIB_INCLUDE.h:
 
@@ -234,4 +250,30 @@ C:/Users/RATTAN/Desktop/ccs\ workspace/TM4C123GH6PM_FreeRTOS/Structures_library/
 C:/Users/RATTAN/Desktop/ccs\ workspace/TM4C123GH6PM_FreeRTOS/Structures_library/linkedlist.h:
 
 C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_18.12.8.LTS/include/stdlib.h:
+
+C:/Users/RATTAN/Desktop/ccs\ workspace/TM4C123GH6PM_FreeRTOS/RTOS/FreeRTOS_INCLUDE.h:
+
+C:/Users/RATTAN/Desktop/ccs\ workspace/TM4C123GH6PM_FreeRTOS/RTOS/FreeRTOS-Kernel/include/FreeRTOS.h:
+
+C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_18.12.8.LTS/include/stddef.h:
+
+C:/Users/RATTAN/Desktop/ccs\ workspace/TM4C123GH6PM_FreeRTOS/RTOS/FreeRTOS-Kernel/include/FreeRTOSConfig.h:
+
+C:/Users/RATTAN/Desktop/ccs\ workspace/TM4C123GH6PM_FreeRTOS/RTOS/FreeRTOS-Kernel/include/projdefs.h:
+
+C:/Users/RATTAN/Desktop/ccs\ workspace/TM4C123GH6PM_FreeRTOS/RTOS/FreeRTOS-Kernel/include/portable.h:
+
+C:/Users/RATTAN/Desktop/ccs\ workspace/TM4C123GH6PM_FreeRTOS/RTOS/FreeRTOS-Kernel/include/deprecated_definitions.h:
+
+C:/Users/RATTAN/Desktop/ccs\ workspace/TM4C123GH6PM_FreeRTOS/RTOS/FreeRTOS-Kernel/portable/CCS/ARM_CM4F/portmacro.h:
+
+C:/Users/RATTAN/Desktop/ccs\ workspace/TM4C123GH6PM_FreeRTOS/RTOS/FreeRTOS-Kernel/include/mpu_wrappers.h:
+
+C:/Users/RATTAN/Desktop/ccs\ workspace/TM4C123GH6PM_FreeRTOS/RTOS/FreeRTOS-Kernel/include/task.h:
+
+C:/Users/RATTAN/Desktop/ccs\ workspace/TM4C123GH6PM_FreeRTOS/RTOS/FreeRTOS-Kernel/include/list.h:
+
+../freertos.h:
+
+../main.h:
 

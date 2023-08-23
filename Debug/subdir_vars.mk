@@ -12,26 +12,32 @@ LIB_SRCS += \
 ../driverlib.lib 
 
 C_SRCS += \
+../freertos.c \
 ../main.c \
 ../startup_ccs.c 
 
 C_DEPS += \
+./freertos.d \
 ./main.d \
 ./startup_ccs.d 
 
 OBJS += \
+./freertos.obj \
 ./main.obj \
 ./startup_ccs.obj 
 
 OBJS__QUOTED += \
+"freertos.obj" \
 "main.obj" \
 "startup_ccs.obj" 
 
 C_DEPS__QUOTED += \
+"freertos.d" \
 "main.d" \
 "startup_ccs.d" 
 
 C_SRCS__QUOTED += \
+"../freertos.c" \
 "../main.c" \
 "../startup_ccs.c" 
 
